@@ -4,7 +4,6 @@ from tank import Tank
 from urllib.parse import urlparse
 
 rctank = Tank()
-gstr = "HELLO,PYTHON!\n"
 
 htmltemplate = '''<html>
 <head>
@@ -114,8 +113,6 @@ class HelloHandler(BaseHTTPRequestHandler):
 		return html
 	
 	def do_GET(self):
-		global gstr
-		res = "" 
 		self.send_response(200)
 		self.send_header('Content-type', 'text/html; charset=utf-8')
 		self.end_headers()

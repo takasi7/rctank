@@ -26,7 +26,7 @@ class TankMotor :
 		GPIO.setup(self.pwmpin, GPIO.OUT)
 		GPIO.output(self.pwmpin, GPIO.LOW)
 		
-		self.pwm = GPIO.PWM(self.pwmpin,1000)
+		self.pwm = GPIO.PWM(self.pwmpin,60)
 		return
 
 	def setspeed(self,duty):
