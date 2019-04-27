@@ -53,6 +53,10 @@ function tankspeed(speed) {
 <input type="radio" name="speed" onclick="tankspeed(90)" __90__ /><label>5  </label>
 <input type="radio" name="speed" onclick="tankspeed(100)" __100__  /><label>MAX</label>
 </div>
+<img src="http://10.0.1.201:8080/?action=stream">
+<!--
+<iframe src="http://10.0.1.201:8080/javascript_simple.html" width="640" height="480"></iframe>
+-->
 <form id="tankaction" action="index.html" method="get" enctype="application/x-www-form-urlencoded">
 <input type="hidden" name="cmd" value="None" id="cmd">
 <input type="hidden" name="speed" value="__SPEED__" id="speed">
