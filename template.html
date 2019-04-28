@@ -1,5 +1,5 @@
 <title>RC TANK NM7/1</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
 
 ul {
@@ -8,7 +8,6 @@ ul {
 }
 .spacer {
 	width:180px;
-	float:left;
 	padding:0px;
 	margin:0px;
 	border-radius:5px;
@@ -21,7 +20,6 @@ ul {
 }
 .button-outer {
 	width:180px;
-	float:left;
 	padding:0px;
 	margin:0px;
 	border-radius:0px;
@@ -31,7 +29,7 @@ ul {
 }
 
 li[type=vertical] {
-	clear:both;
+	/*clear:both;*/
 	width:60px;
 }
 
@@ -94,7 +92,61 @@ li[type=vertical] a{
 #accel {
 	float:right;
 	margin-left:10px;
+	width:60px;
 }
+
+@media screen and (max-width: 400px) {
+	body {
+		margin:0px;
+		padding:2px;
+	}
+
+	#camera-ifr {
+		-moz-transform: scale(0.58,0.58);
+		-webkit-transform: scale(0.58,0.58);
+		-o-transform: scale(0.58,0.58);
+		-ms-transform: scale(0.58,0.58);
+		margin:-135px;
+		height:-100px;
+	}
+	.wrapper {
+		width:380px;
+		height:280px;
+	}
+
+
+	.spacer {
+		width:120px;
+	}
+	.button-outer {
+		width:120px;
+	}
+	.button {
+		width:120px;
+	}
+	li[type=vertical] {
+		float:left;
+		width:120px;
+		margin-top:15px;
+	}
+	li[type=vertical] a{
+		width:108px;
+		font-size:18px;
+		padding:6px;
+	}
+
+	#ctrl {
+		clear:both;
+	}
+
+	#accel {
+		float:left;
+		clear:both;
+		width:380px;
+		margin:10px 0px 0px 0px;
+	}
+}
+
 
 </style>
 
@@ -118,7 +170,10 @@ function tankspeed(speed) {
 </script>
 </head>
 <body>
-<iframe src="http://10.0.1.201:8080/javascript_simple.html" width="640" height="480"></iframe>
+<!--img id='camera-img' src="http://10.0.1.201:8080/?action=stream" width="380"-->
+<div class="wrapper">
+<iframe id='camera-ifr' src="http://10.0.1.201:8080/javascript_simple.html" width="640" height="480"></iframe>
+</div>
 <div id="cockpit">
 <div id="ctrl">
 	<ul>
@@ -168,7 +223,7 @@ function tankspeed(speed) {
 	<a href="javascript:void(0)" class="button" onclick="tankspeed(90)" id="s90">5</a>
 	</li>
 	<li class="button-outer" type="vertical">
-	<a href="javascript:void(0)" class="button"  onclick="tankspeed(100)" id="s100">MAX</a>
+	<a href="javascript:void(0)" class="button"  onclick="tankspeed(100)" id="s100">6</a>
 	</li>
 	</ul>
 
