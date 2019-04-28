@@ -1,0 +1,187 @@
+<title>RC TANK NM7/1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style type="text/css">
+
+ul {
+	margin:0px;
+	padding:0px;
+}
+.spacer {
+	width:180px;
+	float:left;
+	padding:0px;
+	margin:0px;
+	border-radius:5px;
+	border:solid 1px #fff;
+	display:block;
+	float:left;
+	font-size:18px;
+	font-family:sans-serif;
+	padding:8px 0 10px;
+}
+.button-outer {
+	width:180px;
+	float:left;
+	padding:0px;
+	margin:0px;
+	border-radius:0px;
+	border:solid 1px #ccc;
+	display:block;
+	float:left;
+}
+
+li[type=vertical] {
+	clear:both;
+	width:60px;
+}
+
+.button {
+	width:180px;
+	font-size:18px;
+	font-family:sans-serif;
+	text-decoration:none;
+	display:block;
+	text-align:center;
+	padding:8px 0 10px;
+	color:#000;
+	background-color:#fff;
+}
+
+li[type=vertical] a{
+	width:56px;
+	font-size:12px;
+	padding:2px;
+}
+
+.button:hover {
+	background-color:#E9414C;
+	color:#fff;
+}
+
+.button:active {
+	background-color:#9B2835;
+	color:#fff;
+}
+
+.button:checked {
+	background-color:#DC3C40;
+	color:#fff;
+}
+.clear {
+	clear:both;
+	margin:0px;
+}
+
+#__COMMAND__ {
+	background-color:#DC3C40;
+	color:#fff;
+}
+
+#s__SPEED__ {
+	background-color:#DC3C40;
+	color:#fff;
+}
+
+#cockpit {
+	margin-top:10px;
+	width:640px;
+}
+
+#ctrl {
+	float:left;
+}
+
+#accel {
+	float:right;
+	margin-left:10px;
+}
+
+</style>
+
+<script>
+function btnact(id) {
+	var obj = document.getElementById("cmd");
+	var objfm = document.getElementById("tankaction");
+	obj.value = id;
+	objfm.submit();
+	return false;
+}
+
+function tankspeed(speed) {
+	var obj = document.getElementById("speed");
+	var objfm = document.getElementById("tankaction");
+	obj.value = speed;
+	objfm.submit();
+	return false;
+}
+
+</script>
+</head>
+<body>
+<iframe src="http://10.0.1.201:8080/javascript_simple.html" width="640" height="480"></iframe>
+<div id="cockpit">
+<div id="ctrl">
+	<ul>
+	<li class="spacer">&nbsp;</li>
+	<li class="button-outer">
+	<a href="javascript:void(0)" class="button" id="forward" onclick="btnact(this.id)">FORWARD</a>
+	</li>
+	<li class="spacer">&nbsp;</li>
+	</ul>
+	<div class="clear"></div>
+	<ul>
+	<li class="button-outer">
+	<a href="javascript:void(0)" class="button" id="leftturn" onclick="btnact(this.id)">LEFT</a>
+	</li>
+	<li class="button-outer">
+	<a href="javascript:void(0)" class="button" id="brake" onclick="btnact(this.id)" >STOP</a>
+	</li>
+	<li class="button-outer">
+	<a href="javascript:void(0)" class="button" id="rightturn" onclick="btnact(this.id)">RIGHT</a>
+	</li>
+	</ul>
+	<div class="clear"></div>
+	<ul>
+	<li class="spacer">&nbsp;</li>
+	<li class="button-outer">
+	<a href="javascript:void(0)" class="button" id="back" onclick="btnact(this.id)">BACK</a>
+	</li>
+	<li class="spacer">&nbsp;</li>
+	</ul>
+	<div class="clear"></div>
+</div>
+	<div id="accel">
+	<ul>
+	<li class="button-outer" type="vertical">
+	<a href="javascript:void(0)" class="button" onclick="tankspeed(50)" id="s50">1</a>
+	</li>
+	<li class="button-outer" type="vertical">
+	<a href="javascript:void(0)" class="button" onclick="tankspeed(60)" id="s60">2</a>
+	</li>
+	<li class="button-outer" type="vertical">
+	<a href="javascript:void(0)" class="button" onclick="tankspeed(70)" id="s70">3</a>
+	</li>
+	<li class="button-outer" type="vertical">
+	<a href="javascript:void(0)" class="button" onclick="tankspeed(80)" id="s80">4</a>
+	</li>
+	<li class="button-outer" type="vertical">
+	<a href="javascript:void(0)" class="button" onclick="tankspeed(90)" id="s90">5</a>
+	</li>
+	<li class="button-outer" type="vertical">
+	<a href="javascript:void(0)" class="button"  onclick="tankspeed(100)" id="s100">MAX</a>
+	</li>
+	</ul>
+
+</div>
+</div>
+<div class="clear"></div>
+<!--
+<img src="http://10.0.1.201:8080/?action=stream">
+-->
+<form id="tankaction" action="index.html" method="get" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="cmd" value="None" id="cmd">
+<input type="hidden" name="speed" value="__SPEED__" id="speed">
+</form>
+</body>
+</html>
+
